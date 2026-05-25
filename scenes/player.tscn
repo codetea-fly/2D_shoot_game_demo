@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d2wgbi60jxodd"]
+
+[ext_resource type="Texture2D" uid="uid://bdth0bxojekms" path="res://free_ui/ClawAndBlade_v1.5.0/ClawAndBlade/Characters/Character - 256 x 256/character_006.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://civpjnrnv8om4" path="res://scenes/scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://c6vu7qsv8go2w" path="res://free_ui/ClawAndBlade_v1.5.0/ClawAndBlade/Icons/Weapons/weapons_009_bow.png" id="3_qhqgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 43.0
+height = 130.0
+
+[node name="player" type="CharacterBody2D" unique_id=1481715669]
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=547997299]
+shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=803077652]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3vyb7")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1539212600]
+points = PackedVector2Array(-3, 0)
+width = 2.0
+default_color = Color(1, 0.11372549, 0.047058824, 1)
+
+[node name="weapon" type="Node2D" parent="." unique_id=1584575887]
+
+[node name="Sprite2D" type="Sprite2D" parent="weapon" unique_id=203572278]
+rotation = 0.7853982
+texture = ExtResource("3_qhqgy")
