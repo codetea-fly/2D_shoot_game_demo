@@ -7,10 +7,10 @@ var shoot_direction := Vector2.ZERO
 var radius = 70
 
 func _process(delta: float) -> void:
-	$Line2D.points = [$Sprite2D.position, get_local_mouse_position()]
 	shoot_direction = get_local_mouse_position() - $Sprite2D.position
 	$weapon.position = $Sprite2D.position + shoot_direction.normalized() * radius
 	$weapon.rotation = shoot_direction.angle()
+	$Line2D.points = [to_local($weapon/Marker2D.global_position), get_local_mouse_position()]
 
 func _physics_process(delta: float) -> void:
 
