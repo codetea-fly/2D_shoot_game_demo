@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cnlryptqsf0il"]
+
+[ext_resource type="Script" uid="uid://dsajm5i8lj1ia" path="res://scenes/scripts/arrow.gd" id="1_23jat"]
+[ext_resource type="Texture2D" uid="uid://c5wcd0pmlfonx" path="res://free_ui/ClawAndBlade_v1.5.0/ClawAndBlade/Icons/Weapons/weapons_010_arrow.png" id="1_umosx"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_23jat"]
+a = Vector2(-31, 0)
+b = Vector2(25, 0)
+
+[node name="arrow" type="RigidBody2D" unique_id=1750691742 groups=["arrows"]]
+collision_layer = 4
+collision_mask = 8
+gravity_scale = 0.0
+script = ExtResource("1_23jat")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=270018225]
+position = Vector2(9.536743e-07, 4.7683716e-07)
+rotation = -0.76606095
+texture = ExtResource("1_umosx")
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=615133238]
+position = Vector2(-26, 0)
+gravity = Vector2(-50, 0)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1237030209]
+shape = SubResource("SegmentShape2D_23jat")
+metadata/_edit_lock_ = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=352324105]
+position = Vector2(-34, 0)
+rect = Rect2(6, -7, 49, 11)
+metadata/_edit_lock_ = true
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

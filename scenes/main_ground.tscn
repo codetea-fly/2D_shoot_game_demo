@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://bmvi7lgu8ihmh"]
 
+[ext_resource type="Script" uid="uid://beitqajr1b4c3" path="res://scenes/scripts/main_ground.gd" id="1_bytm6"]
 [ext_resource type="PackedScene" uid="uid://d2wgbi60jxodd" path="res://scenes/player.tscn" id="1_yrj6n"]
+[ext_resource type="PackedScene" uid="uid://bdmefw0d0uci0" path="res://scenes/monster.tscn" id="3_4hq1a"]
 
 [node name="MainGround" type="Node2D" unique_id=1889229940]
+script = ExtResource("1_bytm6")
 
 [node name="player" parent="." unique_id=1481715669 instance=ExtResource("1_yrj6n")]
 position = Vector2(960, 512)
+
+[node name="RigidBody2D" parent="." unique_id=917292963 instance=ExtResource("3_4hq1a")]
+position = Vector2(1473, 514)
